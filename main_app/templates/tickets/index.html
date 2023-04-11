@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Ticket Collection</h1>
+
+<div class="row">
+    {% for ticket in tickets %}
+    <div class="col">
+        <div class="card text-dark bg-light mt-3" style="width: 18rem;">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <h5 class="card-title">{{ ticket.event }}</h5>
+                <p class="card-text">{{ ticket.highlight }}</p>
+            </div>
+            <ul class ="list-group list-group-flush">
+                <li class="list-group-item">Date: {{ ticket.date }}</li>
+                <li class="list-group-item">Venue: {{ ticket.venue }}</li>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </ul>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}
