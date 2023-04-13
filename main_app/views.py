@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Ticket
 
 # tickets = [
@@ -22,3 +23,7 @@ def tickets_detail(request, ticket_id):
     return render(request, 'tickets/detail.html', {
         'ticket': ticket
     })
+
+class TicketCreate(CreateView):
+    model = Ticket
+    fields = '__all__'
