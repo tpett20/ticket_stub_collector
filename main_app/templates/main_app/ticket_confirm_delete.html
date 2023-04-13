@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>{{ object.event }} Ticket<span class="badge badge-danger">Delete</span></h1>
+  <h1>{{ object.event }} <span class="badge rounded-pill text-bg-danger">Delete</span></h1>
 
-  <h4>Are you sure you want to delete {{ object.event }}?</h4>
+  <h4>Are you sure you want to delete your ticket from {{ object.event }}?</h4>
 
   <form action="" method="POST">
     {% csrf_token %}

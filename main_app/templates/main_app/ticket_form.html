@@ -2,9 +2,9 @@
 
 {% block content %}
   {% if object %}
-    <h1>{{object.event}}<span class="badge badge-primary">Edit</span></h1>
+    <h1>{{object.event}} <span class="badge rounded-pill text-bg-warning">Edit</span></h1>
   {% else %}
-    <h1>Add a Ticket<span class="badge badge-success">New</span></h1>
+    <h1>Add a Ticket <span class="badge rounded-pill text-bg-success">New</span></h1>
   {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
