@@ -14,6 +14,10 @@
                 <li class="list-group-item">Date: {{ ticket.date }}</li>
                 <li class="list-group-item">Venue: {{ ticket.location }}</li>
             </ul>
+            <div class="card-body">
+                <a href="{% url 'tickets_update' ticket.id %}" class="card-link">Edit</a>
+                <a href="{% url 'tickets_delete' ticket.id %}" class="card-link">Delete</a>
+              </div>
         </div>
     </div>
 </div>

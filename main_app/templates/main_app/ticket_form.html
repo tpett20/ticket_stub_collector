@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Add Ticket 🎟️</h1>
+  {% if object %}
+    <h1>{{object.event}}<span class="badge badge-primary">Edit</span></h1>
+  {% else %}
+    <h1>Add a Ticket<span class="badge badge-success">New</span></h1>
+  {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
     <table>

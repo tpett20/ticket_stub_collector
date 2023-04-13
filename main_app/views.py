@@ -1,12 +1,6 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Ticket
-
-# tickets = [
-#     {'event': 'Mets v. Phillies', 'date': '4/29/2022', 'venue': 'Citi Field, NY', 'highlight': 'First Combined No-Hitter in Mets Franchise History!'},
-#     {'event': 'Mets v. Marlins', 'date': '9/28/2022', 'venue': 'Citi Field, NY', 'highlight': 'Eduardo Escobar Walk-Off Single (and 2-Run HR)!'}, 
-#     {'event': 'Rays v. Royals', 'date': '8/20/2018', 'venue': 'Tropicana Field, FL', 'highlight': 'Ji-Man Choi Bunt Single Against the Shift'}
-# ]
 
 # Create your views here.
 def about(request):
@@ -27,3 +21,11 @@ def tickets_detail(request, ticket_id):
 class TicketCreate(CreateView):
     model = Ticket
     fields = '__all__'
+
+class TicketUpdate(UpdateView):
+    model = Ticket
+    fields = '__all__'
+
+class TicketDelete(DeleteView):
+    model = Ticket
+    success_url = '/tickets'

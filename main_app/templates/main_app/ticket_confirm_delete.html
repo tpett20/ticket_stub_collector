@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ object.event }} Ticket<span class="badge badge-danger">Delete</span></h1>
+
+  <h4>Are you sure you want to delete {{ object.event }}?</h4>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <!-- <input type="submit" value="Yes - Delete!" class="btn"> -->
+    <a href="{% url 'detail' ticket.id %}">Cancel</a>
+  </form>
+{% endblock %}
