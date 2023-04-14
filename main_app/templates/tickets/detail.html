@@ -20,6 +20,25 @@
               </div>
         </div>
     </div>
+    <div class="col">
+        <h4>Comments</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in ticket.comment_set.all %}
+                <tr>
+                    <td>{{comment.author}}</td>
+                    <td>{{comment.content}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 
 {% endblock %}
