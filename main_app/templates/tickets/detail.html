@@ -22,11 +22,13 @@
     </div>
     <div class="col">
         <h4>Comments</h4>
-        <form action="{% url 'add_comment' ticket.id %}" method="POST">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <button type="submit" class="btn btn-primary btn-sm">Add a Comment</button>
-        </form>
+        <div class="form-floating">
+            <form action="{% url 'add_comment' ticket.id %}" method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" class="btn btn-primary btn-sm">Add a Comment</button>
+            </form>
+        </div>
         <table class="table">
             <thead>
                 <tr>
