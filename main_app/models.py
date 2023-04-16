@@ -12,7 +12,7 @@ from django.urls import reverse
 class Ticket(models.Model):
     event = models.CharField(max_length=150)
     description = models.TextField(max_length=250)
-    date = models.DateField()
+    date = models.DateField('Date (yyyy-mm-dd)')
     location = models.CharField(max_length=150)
 
     def __str__(self):

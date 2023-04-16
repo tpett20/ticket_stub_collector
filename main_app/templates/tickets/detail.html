@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col">
-        <div class="card text-dark bg-light mt-3" style="width: 18rem;">
+        <div class="card text-dark bg-light mt-3 mb-4" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">{{ ticket.event }}</h5>
                 <p class="card-text">{{ ticket.description }}</p>
@@ -19,16 +19,7 @@
                 <a href="{% url 'tickets_delete' ticket.id %}" class="card-link">Delete</a>
               </div>
         </div>
-    </div>
-    <div class="col">
         <h4>Comments</h4>
-        <div class="form-floating">
-            <form action="{% url 'add_comment' ticket.id %}" method="POST">
-                {% csrf_token %}
-                {{ comment_form.as_p }}
-                <button type="submit" class="btn btn-primary btn-sm">Add a Comment</button>
-            </form>
-        </div>
         <table class="table">
             <thead>
                 <tr>
@@ -45,6 +36,16 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    <div class="col">
+        <h4>Add a Comment</h4>
+        <div class="form-floating">
+            <form action="{% url 'add_comment' ticket.id %}" method="POST">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit" class="btn btn-primary btn-sm mb-3">Add Comment</button>
+            </form>
+        </div>
     </div>
 </div>
 
