@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
 <h1>Welcome to Tom's Ticket Collector Website</h1>
-<h2>🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️</h2>
+<h2 class="text-center">🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️ 🎟️</h2>
+
+<div class="text-center">
+    <img src="{% static 'Mets.jpg' %}" class="img-fluid rounded" alt="View of Citi Field">
+</div>
 
 {% endblock %}

@@ -19,6 +19,7 @@
                 <a href="{% url 'tickets_delete' ticket.id %}" class="card-link">Delete</a>
               </div>
         </div>
+        {% if ticket.comment_set.all %}
         <h4>Comments</h4>
         <table class="table">
             <thead>
@@ -36,9 +37,10 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% endif %}
     </div>
-    <div class="col">
-        <h4>Add a Comment</h4>
+    <div class="col mt-3">
+        <h4 class>Add a Comment</h4>
         <div class="form-floating">
             <form action="{% url 'add_comment' ticket.id %}" method="POST">
                 {% csrf_token %}
