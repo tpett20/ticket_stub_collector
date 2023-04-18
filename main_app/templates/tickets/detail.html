@@ -26,6 +26,7 @@
                 <tr>
                     <th>Name</th>
                     <th>Comment</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                 <tr>
                     <td>{{comment.author}}</td>
                     <td>{{comment.content}}</td>
+                    <td>{{comment.date}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -41,7 +43,7 @@
     </div>
     <div class="col mt-3">
         <h4 class>Add a Comment</h4>
-        <div class="form-floating">
+        <div>
             <form action="{% url 'add_comment' ticket.id %}" method="POST">
                 {% csrf_token %}
                 {{ comment_form.as_p }}
